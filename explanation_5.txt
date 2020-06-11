@@ -1,0 +1,3 @@
+I created a Block class to represent each block, and a BlockChain (implemented as a LinkedList) 
+to represent a list of blocks. Since I keep a reference to the most recent block that was added
+to the chain in the BlockChain class, pointers to new blocks can be added in constant/O(1) time.

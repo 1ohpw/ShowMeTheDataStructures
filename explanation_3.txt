@@ -1,0 +1,46 @@
+In the encoding method:
+
+I first needed to count the frequencies of each character in the 
+input string. For this task, I decided to use a Hashmap (python dictionary).
+Using this, I can store the characters as keys in constant/O(1) time, and can update the
+frequencies as values in constant/O(1) time as well.
+
+Since I then will repeatedly need to access the keys with the smallest frequencies, I
+created a MinHeap class to serve as a priority queue. Putting the characters in a MinHeap will
+allow me to remove the one with the lowest frequency in logarithmic/O(log n) time, and reinsert
+internal nodes in logarithmic/O(log n) time as well.
+This is much faster than having to re-sort the list everytime I reinsert, which would take 
+at least linearithmic/O(n log n) time.
+
+I created a HuffmanNode class to represent the characters and their frequencies.
+The MinHeap is made up of HuffManNodes, and then they are used to build up objects of the 
+HuffmanTree class I created. The HuffMan tree is a binary tree. To map characters to Huffman
+codes I can use DFS to recursively traverse it in O(n) time, where n represents each HuffmanNode 
+in the tree and I visit each node once.
+
+In the HuffmanTree class, I use another HashMap to store the characters as keys and their
+respective Huffman codes as values. A HashMap allows me to get the code for a particular 
+character in constant/O(1) time.
+
+Overall, the complexity of the encoding method is linearithmic/O(n log n). The most significant
+step to the runtime is iterating through the frequency dictionary (O(n)), and inserting 
+each character as a node to the MinHeap (O(log n)) at every step. 
+
+The space complexity is O(n) as the size of the returned encoded string scales linearly with 
+the size of the input string.
+
+______________________________________________________________________________________________
+
+In the decoding method:
+
+The complexity of the decoding method is O(n) where n represents the length of the encoded 
+string that is iterated through and decoded. At each step of the loop, 
+only constant work is done.
+
+The space complexity is O(n) as the size of the returned decode string scales linearly with 
+the size of the input encoded string.
+
+
+
+
+

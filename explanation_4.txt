@@ -1,0 +1,8 @@
+This solution is done in subquadratic/O(n*m) time where n is the start group + its subgroups,
+and m is the number of users in each group.
+I take O(n) time to recursively visit a Group and it's subgroups in the directory tree once.
+At each Group, I do a linear search through the users array of the group to find
+the desired user. 
+
+The space complexity is constant/O(1), the variables are created as part of the loop
+and destroyed at the end of every iteration.

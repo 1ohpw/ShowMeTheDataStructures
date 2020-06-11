@@ -1,0 +1,18 @@
+In my LRU_Cache implementation, I use a HashMap/python dictionary as the inner cache since
+I can insert, retrieve and remove items in constant/O(1) time in the average case 
+and amortized linear time/O(n) in the worst case.
+
+I created a Doubly-Linked List class for the recency list because I will need to insert 
+at the front of the list and delete from the end of the list frequently 
+as the cache becomes full. Using the DLList, I can do these operations in constant/O(1) time.
+
+get() method:
+The runtime of the get() method depends on the time it takes to get an item from the inner 
+HashMap, so constant/O(1) in the average case and amortized linear/O(n) time in the worst case.
+
+set() method:
+The runtime of the set() method is the same as above, based on the time it takes to insert an
+item in the HashMap.
+
+The space complexity is O(n) where n is the input capacity of the cache. This is the max size
+of the inner HashMap and the DLList.

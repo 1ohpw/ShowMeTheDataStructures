@@ -1,0 +1,15 @@
+Union method:
+I used a Set to store the values of each node in the input lists, since I can insert them
+into a Set in constant/O(1) time. Since I need to iterate through both lists separately to do
+this, the runtime of the method is linear/O(n) where n is the composite size of the input lists.
+The sizes of the Set and output list are the same as that composite size, so space complexity is
+O(n). 
+
+Intersection method:
+I used two Sets to store the values of the respective input lists for the same reason as above. 
+Then the Set intersection method is O(n) on average where n is the length of the smallest set,
+and O(n*m) in the worst case where n and m are the lengths of both input sets respectively.
+The overall runtime of the method matches this significant step (O(n) average/O(n*m) worst).
+
+The two Sets created have the same composite length of the composite size of the input lists,
+so space complexity is O(n).

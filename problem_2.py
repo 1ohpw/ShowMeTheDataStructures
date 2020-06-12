@@ -22,7 +22,7 @@ def find_files(suffix, path):
             fullpath = os.path.join(dir_path,subpath)
             if os.path.isfile(fullpath):
                 if subpath.endswith("." + suffix):
-                    suffix_paths.append(subpath)
+                    suffix_paths.append(fullpath)
             elif os.path.isdir(fullpath):
                 find_files_helper(fullpath)
 
@@ -36,8 +36,8 @@ def find_files(suffix, path):
     return suffix_paths
 
 #Test Case 1
-#print(find_files("c", "testdir"))
-#expected ---> ["b.c", "t1.c", "a.c", "a.c"]
+##print(find_files("c", "testdir"))
+#expected ---> ['testdir/subdir3/subsubdir1/b.c', 'testdir/t1.c', 'testdir/subdir5/a.c', 'testdir/subdir1/a.c']
 
 #Test Case 2
 #print(find_files("java", "testdir"))
@@ -49,11 +49,11 @@ def find_files(suffix, path):
 
 #Test Case 4
 #print(find_files("txt", "testdir2"))
-#expected ---> ["testdir2file.txt"]
+#expected ---> ['testdir2/testdir2file.txt']
 
 #Test Case 4
 #print(find_files("md", "testdir2"))
-#expected ---> ["testdir2file.md", "testdir2file2.md"]
+#expected ---> ['testdir2/testdir2file.md', 'testdir2/testdir2file2.md']
 
 #Test Case 5
 #print(find_files("js", "testdir3"))

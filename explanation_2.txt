@@ -1,8 +1,9 @@
 In this problem, I recursively search through 
 all of the files in the directory for files with matching suffixes.
 
-The time complexity is O(n) where n represents the # of subdirectories/files 
-inside of the target directory. This is because I visit each once.
+The time complexity is subquadratic/O(n*m) where n represents the # of subdirectories/files 
+inside of the target directory, and m represents the # of paths within subdirectories. 
+I visit each of these different paths and subpaths once.
 
 The space complexity is O(n) where n is the number of files with matching suffixes in
 the input directory. The return list should match this.
